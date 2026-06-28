@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #2c2520;
+  --muted: #6f6253;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background-color: #f4eee3;
+  /* Layered "white marble" — soft veining engraved into stone */
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, #f9f5ec, transparent 60%),
+    radial-gradient(80% 60% at 95% 100%, #efe7d7, transparent 55%),
+    linear-gradient(160deg, #f4eee3, #f9f5ec 45%, #efe7d7);
+  background-attachment: fixed;
+}
+
+/* Faint etched floral/vein texture overlay — barely-there, like marble engraving */
+.marble-veining {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+  background-image:
+    linear-gradient(115deg, transparent 0 49.6%, rgba(122, 84, 46, 0.045) 49.6% 50%, transparent 50.4%),
+    linear-gradient(75deg, transparent 0 70.6%, rgba(122, 84, 46, 0.04) 70.6% 71%, transparent 71.4%),
+    linear-gradient(95deg, transparent 0 22.6%, rgba(122, 84, 46, 0.04) 22.6% 23%, transparent 23.4%);
+  background-size: 480px 480px, 620px 620px, 380px 380px;
+}
+
+/* Gold hairline divider used between sections */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b8892d, transparent);
+}
+
+::selection {
+  background: rgba(184, 137, 45, 0.22);
+}
+
+:focus-visible {
+  outline: 2px solid #b8892d;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
